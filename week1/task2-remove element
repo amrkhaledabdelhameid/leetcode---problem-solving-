@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int removeElement(vector<int>& nums, int val) {
+    int p = nums.size() - 1;
+
+    while (p >= 0) {
+        if (nums[p] == val) {
+            nums.erase(nums.begin() + p);
+        } else {
+            p--;
+        }
+    }
+
+    return nums.size();
+}
+
+int main() {
+    vector<int> nums = {0, 1, 2, 2, 3, 0, 4, 2};
+    int val = 2;
+
+    int k = removeElement(nums, val);
+
+    cout << "k = " << k << endl;
+    
+    for (int x : nums) {
+        cout << x << " ";
+    }
+
+    return 0;
+}
