@@ -1,0 +1,27 @@
+1  #include <iostream>
+2  #include <vector>
+3 
+4  using namespace std;
+5 
+6  int main() {
+7      vector<int> nums = {2, 2, 1, 1, 2, 2, 1};
+8 
+9      int candidate = 0;
+10     int count = 0;
+11
+12     for (int num : nums) {
+13         if (count == 0) {
+14             candidate = num;
+15         }
+16        
+17         if (num == candidate) {
+18             count++;
+19         } else {
+20             count--;
+21         }
+22     }
+23
+24     cout << "Majority Element: " << candidate << endl;
+25
+26     return 0;
+27 }
